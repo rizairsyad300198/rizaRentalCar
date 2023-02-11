@@ -39,4 +39,20 @@ class BackendController extends Controller
     public function data_mobil() {
         return view('backend.content.data-mobil');
     }
+
+    public function data_karyawan() {
+        return view('backend.content.data-karyawan');
+    }
+
+    public function data_penyewa() {
+        return view('backend.content.data-penyewa');
+    }
+
+    public function edit_data_mobil() {
+        return  view('backend.content.edit-data-mobil');
+    }
+
+    public function edit_data_penyewa() {
+        return view('backend.content.edit-data-penyewa');
+    }
 }

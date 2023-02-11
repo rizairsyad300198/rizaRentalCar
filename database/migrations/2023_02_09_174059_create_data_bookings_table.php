@@ -17,7 +17,7 @@ class CreateDataBookingsTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('nik')->unique();
-            $table->string('nohp');
+            $table->string('no_hp');
             $table->string('alamat');
             $table->string('tanggal_mulai');
             $table->string('tanggal_berakhir');

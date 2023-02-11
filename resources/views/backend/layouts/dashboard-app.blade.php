@@ -83,7 +83,6 @@
 			<div class="page-content instructor-page-content">
 				<div class="container">
 					<div class="row">
-
 						<!-- Sidebar -->
 						<div class="col-xl-3 col-lg-4 col-md-12 theiaStickySidebar">
 							<div class="settings-widget dash-profile">
@@ -106,8 +105,8 @@
 									<h3>DASHBOARD</h3>
 									<ul>
 										<li class="nav-item active">
-											<a href="instructor-dashboard.html" class="nav-link">
-												<i class="{{ url ('/dashboard')}}"></i> My Dashboard
+											<a href="{{ url ('dashboard')}}" class="nav-link">
+												<i class="feather-file-text"></i> My Dashboard
 											</a>
 										</li>
 										<li class="nav-item">
@@ -116,17 +115,17 @@
 											</a>
 										</li>
                                         <li class="nav-item">
-											<a href="javascript:void(0);" class="nav-link">
+											<a href="{{ url ('dashboard\data-mobil') }}" class="nav-link">
 												<i class="feather-file-text"></i> Data mobil
 											</a>
 										</li>
                                         <li class="nav-item">
-											<a href="javascript:void(0);" class="nav-link">
+											<a href="{{ url ('dashboard\data-penyewa') }}" class="nav-link">
 												<i class="feather-file-text"></i> Data Penyewa
 											</a>
 										</li>
                                         <li class="nav-item">
-											<a href="javascript:void(0);" class="nav-link">
+											<a href="{{ url ('dashboard\data-karyawan') }}" class="nav-link">
 												<i class="feather-users"></i>Data Karyawan
 											</a>
 										</li>
@@ -242,6 +241,14 @@
 
 		<!-- Feature JS -->
 		<script src="{{ url('frontend/assets/plugins/feather/feather.min.js') }}"></script>
+        <script src="{{ url('frontend/assets/js/ckeditor.js') }} "></script>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
 
 		<!-- Sticky Sidebar JS -->
         <script src="{{ url('frontend/assets/plugins/theia-sticky-sidebar/ResizeSensor.js') }}"></script>
