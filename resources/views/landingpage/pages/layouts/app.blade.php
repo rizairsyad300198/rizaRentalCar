@@ -4,7 +4,7 @@
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-		<title>Dreams LMS</title>
+		<title>RR Car Bandung</title>
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="{{ url ('frontend/assets/img/favicon-riza.png') }}">
@@ -198,6 +198,7 @@
 
 		<!-- Custom JS -->
 		<script src="{{ url('frontend/assets/js/script.js') }}"></script>
+        @stack('script')
 
 	</body>
 </html>

@@ -19,6 +19,9 @@ class CreateDataBookingsTable extends Migration
             $table->string('nik')->unique();
             $table->string('nohp');
             $table->string('alamat');
+            $table->string('tanggal_mulai');
+            $table->string('tanggal_berakhir');
+            $table->enum('status',['booked', 'on progress']);
             $table->string('bukti_bayar');
             $table->timestamps();
         });

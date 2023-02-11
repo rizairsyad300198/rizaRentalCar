@@ -39,7 +39,7 @@
 					<div class="owl-carousel login-slide owl-theme">
 						<div class="welcome-login">
 							<div class="login-banner">
-								<img src="{{ url ('frontend/assets/img/test2.png')}}" class="img-fluid" alt="Logo">
+								<img src="{{ url ('frontend/assets/img/supra2.png')}}" class="img-fluid" alt="Logo">
 							</div>
 							<div class="mentor-course text-center">
 								<h2>Welcome to <br>Riza Rental Car</h2>
@@ -48,7 +48,7 @@
 						</div>
 						<div class="welcome-login">
 							<div class="login-banner">
-								<img src="{{ url ('frontend/assets/img/test2.png')}}" class="img-fluid" alt="Logo">
+								<img src="{{ url ('frontend/assets/img/supra2.png')}}" class="img-fluid" alt="Logo">
 							</div>
 							<div class="mentor-course text-center">
 								<h2>Welcome to <br>Riza Rental Car</h2>
@@ -57,7 +57,7 @@
 						</div>
 						<div class="welcome-login">
 							<div class="login-banner">
-								<img src="{{ url ('frontend/assets/img/test2.png')}}" class="img-fluid" alt="Logo">
+								<img src="{{ url ('frontend/assets/img/supra2.png')}}" class="img-fluid" alt="Logo">
 							</div>
 							<div class="mentor-course text-center">
 								<h2>Welcome to <br>Riza Rental Car</h2>

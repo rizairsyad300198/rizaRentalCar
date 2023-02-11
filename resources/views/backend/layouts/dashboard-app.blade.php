@@ -7,37 +7,30 @@
 		<title>RR Car Bandung</title>
 
 		<!-- Favicon -->
-		<link rel="shortcut icon" type="image/x-icon" href="{{ url ('frontend/assets/img/favicon-riza.png') }}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url ('frontend/assets/img/favicon-riza.png') }}">
+
 
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="{{ url ('frontend/assets/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ url('frontend/assets/css/bootstrap.min.css') }}">
 
 		<!-- Fontawesome CSS -->
-		<link rel="stylesheet" href="{{ url ('frontend/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
-		<link rel="stylesheet" href="{{ url ('frontend/assets/plugins/fontawesome/css/all.min.css') }}">
+		<link rel="stylesheet" href="{{ url('frontend/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+		<link rel="stylesheet" href="{{ url('frontend/assets/plugins/fontawesome/css/all.min.css') }}">
 
-		<!-- Owl Carousel CSS -->
-		<link rel="stylesheet" href="{{ url('frontend/assets/css/owl.carousel.min.css') }}">
-		<link rel="stylesheet" href="{{ url('frontend/assets/css/owl.theme.default.min.css') }}">
-
-		<!-- Slick CSS -->
-		<link rel="stylesheet" href="{{ url('frontend/assets/plugins/slick/slick.css') }}">
-		<link rel="stylesheet" href="{{ url('frontend/assets/plugins/slick/slick-theme.css') }}">
-
-		<!-- Select2 CSS -->
-		<link rel="stylesheet" href="{{ url('frontend/assets/plugins/select2/css/select2.min.css') }}">
-
-		<!-- Aos CSS -->
-		<link rel="stylesheet" href="{{ url('frontend/assets/plugins/aos/aos.css') }}">
+		<!-- Feather CSS -->
+		<link rel="stylesheet" href="{{ url('frontend/assets/css/feather.css') }}">
 
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{ url('frontend/assets/css/style.css') }}">
 
 	</head>
-    <body>
-        <div class="main-wrapper">
-            <!-- Header -->
-			<header class="header">
+	<body>
+
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+
+			<!-- Header -->
+			<header class="header header-page">
 				<div class="header-fixed">
 					<nav class="navbar navbar-expand-lg header-nav scroll-sticky">
 						<div class="container">
@@ -86,11 +79,71 @@
 			</header>
 			<!-- /Header -->
 
+			<!-- Page Wrapper -->
+			<div class="page-content instructor-page-content">
+				<div class="container">
+					<div class="row">
 
-            @yield('content')
+						<!-- Sidebar -->
+						<div class="col-xl-3 col-lg-4 col-md-12 theiaStickySidebar">
+							<div class="settings-widget dash-profile">
+								<div class="settings-menu p-0">
+									<div class="profile-bg">
+										<img src="{{ url ('frontend/assets/img/instructor-profile-bg.jpg') }}" alt="">
+										<div class="profile-img">
+											<a href="instructor-profile.html"><img src="{{ url ('frontend/assets/img/user/user15.jpg') }}" alt=""></a>
+										</div>
+									</div>
+									<div class="profile-group">
+										<div class="profile-name text-center">
+											<h4><a href="#">{{ Auth::user()->name}}</a></h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="settings-widget account-settings">
+								<div class="settings-menu">
+									<h3>DASHBOARD</h3>
+									<ul>
+										<li class="nav-item active">
+											<a href="instructor-dashboard.html" class="nav-link">
+												<i class="{{ url ('/dashboard')}}"></i> My Dashboard
+											</a>
+										</li>
+										<li class="nav-item">
+											<a href="javascript:void(0);" class="nav-link">
+												<i class="feather-shopping-bag"></i> Orders
+											</a>
+										</li>
+                                        <li class="nav-item">
+											<a href="javascript:void(0);" class="nav-link">
+												<i class="feather-file-text"></i> Data mobil
+											</a>
+										</li>
+                                        <li class="nav-item">
+											<a href="javascript:void(0);" class="nav-link">
+												<i class="feather-file-text"></i> Data Penyewa
+											</a>
+										</li>
+                                        <li class="nav-item">
+											<a href="javascript:void(0);" class="nav-link">
+												<i class="feather-users"></i>Data Karyawan
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- /Sidebar -->
 
+						@yield('content')
 
-            <!-- Footer -->
+					</div>
+				</div>
+			</div>
+			<!-- /Page Wrapper -->
+
+			<!-- Footer -->
 			<footer class="footer" id="footer">
 
 				<!-- Footer Top -->
@@ -177,32 +230,29 @@
 
 			</footer>
 			<!-- /Footer -->
-        </div>
 
-        <!-- jQuery -->
-        <script src="{{ url('frontend/assets/js/jquery-3.6.0.min.js') }}"></script>
+		</div>
+	   	<!-- /Main Wrapper -->
 
-        <!-- Bootstrap Core JS -->
-        <script src="{{ url('frontend/assets/js/bootstrap.bundle.min.js') }}"></script>
+		<!-- jQuery -->
+		<script src="{{ url('frontend/assets/js/jquery-3.6.0.min.js') }}"></script>
 
-        <!-- counterup JS -->
-        <script src="{{ url('frontend/assets/js/jquery.waypoints.js') }}"></script>
-        <script src="{{ url('frontend/assets/js/jquery.counterup.min.js') }}"></script>
+		<!-- Bootstrap Core JS -->
+		<script src="{{ url('frontend/assets/js/bootstrap.bundle.min.js') }}"></script>
 
-        <!-- Select2 JS -->
-        <script src="{{ url('frontend/assets/plugins/select2/js/select2.min.js') }}"></script>
+		<!-- Feature JS -->
+		<script src="{{ url('frontend/assets/plugins/feather/feather.min.js') }}"></script>
 
-        <!-- Owl Carousel -->
-        <script src="{{ url('frontend/assets/js/owl.carousel.min.js') }}"></script>
+		<!-- Sticky Sidebar JS -->
+        <script src="{{ url('frontend/assets/plugins/theia-sticky-sidebar/ResizeSensor.js') }}"></script>
+        <script src="{{ url('frontend/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js') }}"></script>
 
-        <!-- Slick Slider -->
-        <script src="{{ url('frontend/assets/plugins/slick/slick.js') }}"></script>
+        <!-- Chart JS -->
+		<script src="{{ url('frontend/assets/plugins/apexchart/apexcharts.min.js') }}"></script>
+		<script src="{{ url('frontend/assets/plugins/apexchart/chart-data.js') }}"></script>
 
-        <!-- Aos -->
-        <script src="{{ url('frontend/assets/plugins/aos/aos.js') }}"></script>
+		<!-- Custom JS -->
+		<script src="{{ url('frontend/assets/js/script.js') }}"></script>
 
-        <!-- Custom JS -->
-        <script src="{{ url('frontend/assets/js/script.js') }}"></script>
-
-    </body>
+	</body>
 </html>

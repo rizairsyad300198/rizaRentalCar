@@ -11,8 +11,8 @@
                 </div>
             </div>
             <div class="col-md-5 d-flex align-items-center">
-                <div class="girl-slide-img aos" data-aos="fade-up">
-                    <img src="{{ url ('frontend/assets/img/test2.png') }}" alt="">
+                <div>
+                    <img src="{{ url ('frontend/assets/img/supra2.png') }}" alt="">
                 </div>
             </div>
         </div>

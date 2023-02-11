@@ -27,6 +27,7 @@ class LandingPageController extends Controller
 
     {
 
+
         $data = $this->validate($request, [
             'bukti_pembayaran'  => 'mimes:png,jpg',
             'nama'              => 'required|regex:/^[\pL\s\-]+$/u',
@@ -38,12 +39,18 @@ class LandingPageController extends Controller
         $name = 'BP-' . Carbon::now()->format('Y-m-d-H-i-s') . '.' . $file->getClientOriginalExtension();
         $path = $file->storeAs('bukti_pembayaran', '' . $name . '', 'public');
 
+        $tanggalSewa    = Carbon::parse($request->start_date)->format('d F, Y');
+        $tanggalKembali = Carbon::parse($request->end_date)->format('d F, Y');
+
         $dataCustomer = DataBooking::create([
-            'nama' => $request->nama,
-            'nik'  => $request->nik,
-            'nohp' => $request->nohp,
-            'alamat' => $request->alamat,
-            'bukti_bayar' => $path
+            'nama'              => $request->nama,
+            'nik'               => $request->nik,
+            'nohp'              => $request->nohp,
+            'alamat'            => $request->alamat,
+            'tanggal_mulai'     => $tanggalSewa,
+            'tanggal_berakhir'  => $tanggalKembali,
+            'status'            => 'booked',
+            'bukti_bayar'       => $path
         ]);
 
         return view('landingpage.pages.content.success');

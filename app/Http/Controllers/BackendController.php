@@ -30,4 +30,13 @@ class BackendController extends Controller
 
 
     }
+
+
+    public function dashboard() {
+        return view('backend.content.dashboard');
+    }
+
+    public function data_mobil() {
+        return view('backend.content.data-mobil');
+    }
 }

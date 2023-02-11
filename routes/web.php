@@ -3,6 +3,7 @@
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\BackendController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,20 @@ Route::prefix('/checkout')->group(function () {
 
 Route::get('/admin/login', [BackendController::class, 'index']);
 Route::post('/admin/login', [BackendController::class, 'login'])->name('login');
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::prefix('/dashboard')->group( function () {
+        Route::get('/', [BackendController::class, 'dashboard']);
+
+        Route::prefix('/data-mobil')->group(function () {
+            Route::get('/', [BackendController::class, 'data_mobil']);
+            // Rout::get('/edit/{id}', [BackendController::class, '');
+            // Rout::post('/update/{id}', [BackendController::class, '');
+
+            // Rout::get('/create', [BackendController::class, '');
+            // Rout::post('/create', [BackendController::class, '');
+        });
+    });
+});
+

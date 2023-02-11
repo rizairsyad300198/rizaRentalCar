@@ -15,7 +15,7 @@
                     <div class="course-box d-flex aos" data-aos="fade-up">
                         <div class="product">
                             <div class="product-img">
-                                <a href="course-details.html">
+                                <a href="{{ url ('/checkout') }}">
                                     <img class="img-fluid" alt="" src="{{ url ('frontend/assets/img/course/course-01.jpg') }}">
                                 </a>
                                 <div class="price combo">
@@ -26,7 +26,7 @@
                                 <div class="course-group d-flex">
                                     <div class="course-group-img d-flex">
                                         <div class="course-name justify-content-center">
-                                            <h4><a href="">Nama Mobil</a></h4>
+                                            <h4><a href="{{ url ('/checkout') }}">Nama Mobil</a></h4>
                                         </div>
                                     </div>
                                 </div>

@@ -14,6 +14,9 @@ class DataBooking extends Model
         'alamat',
         'nohp',
         'nik',
+        'tanggal_mulai',
+        'tanggal_berakhir',
+        'status',
         'bukti_bayar'
     ];
 

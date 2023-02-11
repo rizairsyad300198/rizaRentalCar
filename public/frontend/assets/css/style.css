@@ -905,7 +905,7 @@ button.bg-danger:hover {
 }
 .main-nav li a {
 	display: block;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
 	color: #26292c;
 }
@@ -18185,6 +18185,13 @@ input[type=password]::-ms-clear
 .instructor-inner .instructor-text-warning {
     color: #FFB54A;
 }
+
+.instructor-inner .instructor-text-important {
+    color: #ff0000;
+}
+
+
+
 .instructor-inner p {
     font-size: 14px;
     letter-spacing: 0.05em;
