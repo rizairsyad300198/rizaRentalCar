@@ -15,14 +15,13 @@ class CreateDataBookingsTable extends Migration
     {
         Schema::create('data_bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('nik')->unique();
-            $table->string('no_hp');
-            $table->string('alamat');
+            $table->integer('id_mobil');
+            $table->integer('id_penyewa');
             $table->string('tanggal_mulai');
             $table->string('tanggal_berakhir');
             $table->enum('status',['booked', 'on progress']);
             $table->string('bukti_bayar');
+            $table->integer('total');
             $table->timestamps();
         });
     }

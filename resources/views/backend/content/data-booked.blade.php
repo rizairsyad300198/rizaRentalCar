@@ -1,44 +1,41 @@
 @extends('backend.layouts.dashboard-app')
 @section('content')
-
-    <!-- Instructor Dashboard -->
-    <div class="col-xl-9 col-lg-8 col-md-12">
+        <!--- Data Booked --->
         <div class="row">
             <div class="col-md-12">
                 <div class="settings-widget">
                     <div class="settings-inner-blk p-0">
                         <div class="sell-course-head comman-space">
-                            <h3>Data Karyawan</h3>
-                            <button class="btn btn-outline-add-data navbar-btn float: right;">Tambah data karyawan</button>
+                            <h3>Data Booked</h3>
                         </div>
                         <div class="comman-space pb-0">
                             <div class="settings-tickets-blk course-instruct-blk table-responsive">
-
-                                <!-- Referred Users-->
                                 <table class="table table-stripped text-center">
                                         <thead>
                                             <th scope="col">No</th>
+                                            <th scope="col">Merk</th>
+                                            <th scope="col">Nomor Registrasi</th>
+                                            <th scope="col">Nama Penyewa</th>
                                             <th scope="col">Nama Karyawan</th>
-                                            <th scope="col">Nomor Induk Karyawan</th>
-                                            <th scope="col">No. Telepon</th>
-                                            <th scope="col">Alamat</th>
-                                            <th scope="col">Aksi</th>
+                                            <th scope="col">Lama Sewa</th>
+                                            <th scope="col">Aksi</th></th>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <th scope="row">1</th>
-                                                <td>Agus Sujibdo</td>
-                                                <td>123781239127312</td>
-                                                <td>078123916734</td>
-                                                <td>jalan ciwarurug bandung</td>
+                                                <td>Avanza</td>
+                                                <td>Z 1212 GV</td>
+                                                <td>Irsyad</td>
+                                                <td>Agus Supriyadi</td>
+                                                <td>10 Hari</td>
                                                 <td>
                                                     <div class="d-flex justify-content-around">
-                                                        <a href="{{ url ('dashboard/data-karyawan/edit-data-karyawan') }}" class="nav-link">
-                                                            <button class="btn btn-warning">
-                                                                Ubah
+                                                        <form action="">
+                                                            <button class="btn btn-return">
+                                                                Return
                                                             </button>
-                                                            <button class="btn btn-danger">
-                                                                Edit
+                                                            <button class="btn btn-information-detail">
+                                                                Detail
                                                             </button>
                                                         </form>
                                                     </div>
@@ -46,14 +43,10 @@
                                             </tr>
                                         </tbody>
                                   </table>
-                                <!-- /Referred Users-->
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /Instructor Dashboard -->
 @endsection

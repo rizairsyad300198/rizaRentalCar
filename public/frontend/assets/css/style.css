@@ -317,6 +317,7 @@ button.bg-danger:hover {
 .btn-primary {
 	background-color: #FF875A;
 	border: 1px solid #FF875A;
+    margin-top: 12px;
 }
 .bg-blue {
 	background: #392C7D;

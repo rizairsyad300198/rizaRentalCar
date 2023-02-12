@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\BackendController;
+use App\Http\Controllers\DataMobilController;
+use App\Http\Controllers\DataPenyewaController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -34,23 +36,28 @@ Route::group(['middleware' => 'auth'], function () {
     Route::prefix('/dashboard')->group( function () {
         Route::get('/', [BackendController::class, 'dashboard']);
 
-        Route::prefix('/data-mobil')->group(function () {
-                Route::get('/', [BackendController::class, 'data_mobil']);
-                Route::prefix('/edit-data-mobil')->group(function () {
-                    Route::get('/', [BackendController::class, 'edit_data_mobil']);
-                });
-            });
+        Route::prefix('data-mobil')->group(function () {
+            Route::get('/', [DataMobilController::class, 'index']);
+            Route::get('/tambah-data-mobil', [DataMobilController::class, 'create']);
+            Route::post('/tambah-data-mobil', [DataMobilController::class, 'store']);
+            Route::get('/edit-data-mobil/{id}', [DataMobilController::class, 'edit']);
+            Route::post('/edit-data-mobil/{id}', [DataMobilController::class, 'update']);
+            Route::post('/delete-data-mobil/{id}', [DataMobilController::class, 'destroy']);
+        });
 
-        Route::prefix('/data-karyawan')->group(function () {
-            Route::get('/', [BackendController::class, 'data_karyawan']);
-             });
+        Route::prefix('data-penyewa')->group(function () {
+            Route::get('/', [DataPenyewaController::class, 'index']);
+            Route::get('/tambah-data-penyewa', [DataPenyewaController::class, 'create']);
+            Route::post('/tambah-data-penyewa', [DataPenyewaController::class, 'store']);
+            Route::get('/edit-data-penyewa/{id}', [DataPenyewaController::class, 'edit']);
+            Route::post('/edit-data-penyewa/{id}', [DataPenyewaController::class, 'update']);
+            Route::post('/delete-data-penyewa/{id}', [DataPenyewaController::class, 'destroy']);
+        });
 
-             Route::prefix('/data-penyewa')->group(function () {
-                Route::get('/', [BackendController::class, 'data_penyewa']);
-                Route::prefix('/edit-data-penyewa')->group(function () {
-                    Route::get('/', [BackendController::class, 'edit_data_penyewa']);
-                 });
-             });
+
     });
+
+
+
 });
 

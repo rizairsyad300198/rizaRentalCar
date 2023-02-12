@@ -57,20 +57,6 @@
 										<i class="fas fa-times"></i>
 									</a>
 								</div>
-								<ul class="main-nav">
-									<li class="has-submenu active">
-										<a class="" href="">Beranda</a>
-									</li>
-									<li class="has-submenu">
-										<a href="#tarifRental">Tarif Rental</a>
-									</li>
-									<li class="has-submenu">
-										<a href="">Jenis Mobil</a>
-									</li>
-									<li class="has-submenu">
-										<a href="">Tentang Kami</a>
-									</li>
-								</ul>
 							</div>
 
 						</div>
@@ -104,14 +90,9 @@
 								<div class="settings-menu">
 									<h3>DASHBOARD</h3>
 									<ul>
-										<li class="nav-item active">
-											<a href="{{ url ('dashboard')}}" class="nav-link">
-												<i class="feather-file-text"></i> My Dashboard
-											</a>
-										</li>
 										<li class="nav-item">
-											<a href="javascript:void(0);" class="nav-link">
-												<i class="feather-shopping-bag"></i> Orders
+											<a href="{{ url ('dashboard')}}" class="nav-link">
+												<i class="feather-clipboard"></i> My Dashboard
 											</a>
 										</li>
                                         <li class="nav-item">
@@ -121,12 +102,7 @@
 										</li>
                                         <li class="nav-item">
 											<a href="{{ url ('dashboard\data-penyewa') }}" class="nav-link">
-												<i class="feather-file-text"></i> Data Penyewa
-											</a>
-										</li>
-                                        <li class="nav-item">
-											<a href="{{ url ('dashboard\data-karyawan') }}" class="nav-link">
-												<i class="feather-users"></i>Data Karyawan
+												<i class="feather-users"></i> Data Penyewa
 											</a>
 										</li>
 									</ul>
@@ -250,6 +226,14 @@
                 } );
         </script>
 
+
+<script>
+    var startYear = 1800;
+for (i = new Date().getFullYear(); i > startYear; i--)
+{
+  $('#tahun').append($('<option />').val(i).html(i));
+}
+</script>
 		<!-- Sticky Sidebar JS -->
         <script src="{{ url('frontend/assets/plugins/theia-sticky-sidebar/ResizeSensor.js') }}"></script>
         <script src="{{ url('frontend/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js') }}"></script>

@@ -176,7 +176,7 @@
                                                     <div class="d-flex justify-content-around">
                                                         <form action="">
                                                             <button class="btn btn-return">
-                                                                Return
+                                                                Dikembalikan
                                                             </button>
                                                             <button class="btn btn-information-detail">
                                                                 Detail

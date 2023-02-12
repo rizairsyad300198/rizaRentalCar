@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataBooking;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreDataBookingRequest;
 use App\Http\Requests\UpdateDataBookingRequest;
 
@@ -15,7 +16,7 @@ class DataBookingController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -45,9 +46,9 @@ class DataBookingController extends Controller
      * @param  \App\Models\DataBooking  $dataBooking
      * @return \Illuminate\Http\Response
      */
-    public function show(DataBooking $dataBooking)
+    public function show()
     {
-        //
+        return view('backend.content');
     }
 
     /**

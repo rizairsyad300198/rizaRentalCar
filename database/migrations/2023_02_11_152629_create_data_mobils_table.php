@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateDataMobilsTable extends Migration
 {
     /**
+     *
      * Run the migrations.
      *
      * @return void
@@ -15,13 +16,15 @@ class CreateDataMobilsTable extends Migration
     {
         Schema::create('data_mobils', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_karyawan');
             $table->string('merk');
-            $table->char('no_registrasi');
+            $table->string('no_registrasi');
             $table->string('warna_mobil');
-            $table->string('jenis_mobil');
-            $table->string('harga_sewa');
+            $table->string('tahun');
+            $table->integer('harga_sewa');
             $table->integer('stock');
+            $table->string('gambar');
+            $table->string('deskripsi');
+            $table->timestamps();
         });
     }
 

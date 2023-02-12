@@ -32,7 +32,7 @@ class LandingPageController extends Controller
             'bukti_pembayaran'  => 'mimes:png,jpg',
             'nama'              => 'required|regex:/^[\pL\s\-]+$/u',
             'nik'               => 'required|max:15',
-            'nohp'              => 'required|max:13',
+            'nohp'              => 'required|max:13'
         ]);
 
         $file = $request->file('bukti_pembayaran');
@@ -45,7 +45,7 @@ class LandingPageController extends Controller
         $dataCustomer = DataBooking::create([
             'nama'              => $request->nama,
             'nik'               => $request->nik,
-            'nohp'              => $request->nohp,
+            'no_hp'             => $request->nohp,
             'alamat'            => $request->alamat,
             'tanggal_mulai'     => $tanggalSewa,
             'tanggal_berakhir'  => $tanggalKembali,
@@ -60,4 +60,17 @@ class LandingPageController extends Controller
     {
         return view('landingpage.pages.content.success');
     }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function tampilDataBook($id)
+    {
+        dd($id);
+        $data = DataBooking::find($id);
+        return  view('backend.content.edit-data-penyewa', compact('data'));
+    }
+
 }

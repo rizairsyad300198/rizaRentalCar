@@ -36,17 +36,6 @@ class BackendController extends Controller
         return view('backend.content.dashboard');
     }
 
-    public function data_mobil() {
-        return view('backend.content.data-mobil');
-    }
-
-    public function data_karyawan() {
-        return view('backend.content.data-karyawan');
-    }
-
-    public function data_penyewa() {
-        return view('backend.content.data-penyewa');
-    }
 
     public function edit_data_mobil() {
         return  view('backend.content.edit-data-mobil');
@@ -54,5 +43,13 @@ class BackendController extends Controller
 
     public function edit_data_penyewa() {
         return view('backend.content.edit-data-penyewa');
+    }
+
+    public function tambah_data_mobil () {
+        return view ('backend.content.tambah-data-mobil');
+    }
+
+    public function tambah_data_penyewa () {
+        return view ('backend.content.tambah-data-penyewa');
     }
 }

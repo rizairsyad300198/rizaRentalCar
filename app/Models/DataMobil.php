@@ -9,12 +9,16 @@ class DataMobil extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $fillable  = [
         'merk',
         'no_registrasi',
         'warna_mobil',
-        'jenis_mobil',
-        'stock'
+        'tahun',
+        'harga_sewa',
+        'stock',
+        'gambar',
+        'deskripsi'
     ];
+
     protected $table = 'data_mobils';
 }

@@ -81,7 +81,7 @@
 
                                             <div class="col-lg-12">
                                                 <div class="wallet-method">
-                                                    <p class="text-muted" style="font-style: italic !important;">Note : Silahkan Transfer Ke No Rekening dibawah sebesar <span id="hargaDp"></span> dan Upload Bukti Pembayaran</p>
+                                                    <p class="text-muted" style="font-style: italic !important;">Note : Silahkan Transfer Ke No Rekening dibawah sebesar <span id="harga" style="color:red;"></span> dan Upload Bukti Pembayaran</p>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="form-control-label">No Rekening</label>
@@ -131,7 +131,7 @@
                 $('#end_date').attr('min', tanggalMulai);
                 $('#end_date').val("");
                 $('#total').val("");
-                $('#hargaDp').html("");
+                $('#harga').html("");
             });
 
             $('#end_date').on('change', function() {
@@ -145,9 +145,9 @@
                 } else {
                     var hasil = price * sumDate;
                 }
-                var dp = hasil * (50 / 100);
+                var total_harga = hasil;
                 $('#total').val(converRp(hasil));
-                $('#hargaDp').html(converRp(dp))
+                $('#harga').html(converRp(total_harga))
             });
 
         </script>
