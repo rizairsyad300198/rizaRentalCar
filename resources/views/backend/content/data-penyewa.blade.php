@@ -8,7 +8,7 @@
                     <div class="settings-inner-blk p-0">
                         <div class="sell-course-head comman-space d-flex justify-content-between">
                             <h3>Data Penyewa</h3>
-                            <a href="{{ url ('dashboard/data-penyewa/tambah-data-penyewa') }}" class="btn btn-outline-add-data navbar-btn">Tambah Data Mobil</a>
+                            <a href="{{ url ('dashboard/data-penyewa/tambah-data-penyewa') }}" class="btn btn-outline-add-data navbar-btn">Tambah Data Penyewa</a>
                         </div>
                      </div>
                         <div class="comman-space pb-0">

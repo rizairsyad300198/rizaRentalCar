@@ -10,14 +10,13 @@ class DataBooking extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
-        'alamat',
-        'nohp',
-        'nik',
+        'id_mobil',
+        'id_penyewa',
         'tanggal_mulai',
         'tanggal_berakhir',
         'status',
-        'bukti_bayar'
+        'bukti_bayar',
+        'total',
     ];
 
 

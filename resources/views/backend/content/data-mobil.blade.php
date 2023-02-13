@@ -35,7 +35,7 @@
                                                 <td>{{$item->tahun}}</td>
                                                 <td>{{$item->stock}}</td>
                                                 <td>{{$item->harga_sewa}}</td>
-                                                <td>{{$item->gambar}}</td>
+                                                <td><img src="{{ url ('storage/'. $item->gambar)}}" style="width:64px"></td>
                                                 <td>
                                                     <div class="d-flex justify-content-around">
                                                         <a  href="{{ url ('dashboard/data-mobil/edit-data-mobil/'.$item->id) }}" class="btn btn-warning" style="margin-right: 4px;">Ubah</a>

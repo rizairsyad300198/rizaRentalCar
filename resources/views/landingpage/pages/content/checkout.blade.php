@@ -5,17 +5,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-
+                        <h4>Mobil : {{ $mobil->merk }}</h4>
                         <!-- Billing Address -->
                         <div class="student-widget">
                             <div class="student-widget-group add-course-info">
                                 <div class="cart-head">
                                     <h4>Form Pembayaran Customer</h4>
-
                                 </div>
                                 <div class="checkout-form">
                                     <form action=" {{ route ('bayar')}}" method="POST" enctype="multipart/form-data">
                                         @csrf
+                                        <input type="hidden" value="{{$mobil->id}}" name="id">
+
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group">
@@ -69,13 +70,14 @@
                                                 <div class="form-group">
                                                     <label class="form-control-label">Harga Sewa / Hari</label>
                                                     <input id="price" type="text" class="form-control" readonly>
+                                                    <input id="hargaSewa" type="hidden" value="{{$mobil->harga_sewa}}">
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label class="form-control-label">Total</label>
-                                                    <input id="total" type="text" class="form-control" readonly>
+                                                    <input id="total" type="text" class="form-control" name="total" readonly>
                                                 </div>
                                             </div>
 
@@ -116,7 +118,8 @@
     @push('script')
         <script>
             $(document).ready(function () {
-                $('#price').val('Rp. 300.000');
+                var harga = $('#hargaSewa').val();
+                $('#price').val(harga);
             });
             function datediff(first, second) {
                 return Math.round((second - first + 1) / (1000 * 60 * 60 * 24));

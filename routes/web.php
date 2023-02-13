@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\BackendController;
+use App\Http\Controllers\DataBookingController;
 use App\Http\Controllers\DataMobilController;
 use App\Http\Controllers\DataPenyewaController;
 use Illuminate\Support\Facades\Route;
@@ -19,12 +20,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 Route::get('/', [LandingPageController::class, 'index']);
 
-Route::post('/success', [LandingPageController::class, 'success']);
+Route::get('/success', [LandingPageController::class, 'success']);
 
 
 Route::prefix('/checkout')->group(function () {
-    Route::get('/', [LandingPageController::class, 'checkout']);
-    Route::post('/', [LandingPageController::class, 'checkoutPayment'])->name('bayar');
+    Route::get('/{id}', [LandingPageController::class, 'checkout']);
+    Route::post('/payment', [DataBookingController::class, 'store'])->name('bayar');
 });
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataBooking;
+use App\Models\DataMobil;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
@@ -13,14 +14,16 @@ class LandingPageController extends Controller
     //
     public function index()
     {
-
-        return view ('landingpage.index');
+        return view ('landingpage.index',[
+            'mobil' => DataMobil::all(),
+        ]);
     }
 
-    public function checkout()
+    public function checkout($id)
     {
-
-        return view ('landingpage.pages.content.checkout');
+        return view ('landingpage.pages.content.checkout',[
+            'mobil' => DataMobil::find($id),
+        ]);
     }
 
     public function checkoutPayment(Request $request)

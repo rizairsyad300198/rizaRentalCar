@@ -53,7 +53,7 @@ class DataPenyewaController extends Controller
             'email'             => $request->email,
             'alamat'            => $request->alamat
         ]);
-        return view('backend.content.data-penyewa');
+        return redirect('dashboard/data-penyewa');
     }
 
     /**

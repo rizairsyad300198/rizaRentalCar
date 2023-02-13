@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataBooking;
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreDataBookingRequest;
+
 use App\Http\Requests\UpdateDataBookingRequest;
+use App\Models\DataPenyewa;
+use Illuminate\Http\Request;
 
 class DataBookingController extends Controller
 {
@@ -16,7 +17,7 @@ class DataBookingController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -35,9 +36,27 @@ class DataBookingController extends Controller
      * @param  \App\Http\Requests\StoreDataBookingRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDataBookingRequest $request)
+    public function store(Request $request)
     {
-        //
+        $penyewa = DataPenyewa::create([
+            'nama'          => $request->nama,
+            'nik'           => $request->nik,
+            'no_telepon'    => $request->nohp,
+            'alamat'        => $request->alamat,
+            'email'         => 'riza@gmail.com',
+        ]);
+
+        $transaksi = DataBooking::create([
+            'id_mobil'      => $request->id,
+            'id_penyewa'      => $penyewa->id,
+            'tanggal_mulai'      => $request->start_date,
+            'tanggal_berakhir'  => $request->end_date,
+            'status'            => 'booked',
+            'bukti_bayar'      => $request->bukti_pembayaran,
+            'total'      => $request->total,
+        ]);
+
+        return redirect('/success');
     }
 
     /**
@@ -46,9 +65,9 @@ class DataBookingController extends Controller
      * @param  \App\Models\DataBooking  $dataBooking
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(DataBooking $dataBooking)
     {
-        return view('backend.content');
+        //
     }
 
     /**

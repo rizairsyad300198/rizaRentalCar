@@ -38,7 +38,7 @@ $(document).ready(function() {
 				startingShape: 'rounded'
 			},
 		},
-		 colors: ['#1D9CFD'],
+		 colors: ['#fff000'],
 		dataLabels: {
 			enabled: false
 		},
@@ -49,7 +49,7 @@ $(document).ready(function() {
 		},
 		series: [{
 			name: 'Revenue',
-			data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+			data: [12, 85, 101, 98, 87, 105, 91, 114, 94]
 		}],
 		xaxis: {
 			categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],

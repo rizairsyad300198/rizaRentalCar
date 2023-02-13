@@ -79,7 +79,7 @@ class DataMobilController extends Controller
               return $e->getMessage();
           }
 
-          return view('backend.content.data-mobil');
+          return redirect('dashboard/data-mobil');
     }
 
     /**
